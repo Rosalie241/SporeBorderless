@@ -1,0 +1,7 @@
+<mod displayName="SporeBorderless" 
+	unique="SporeBorderless" 
+	description="This is a Spore mod which makes Spore launch in borderless fullscreen" 
+	installerSystemVersion="1.0.1.2"
+	dllsBuild="2.5.179">
+	<prerequisite>SporeBorderless.dll</prerequisite>
+</mod>
