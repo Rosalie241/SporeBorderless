@@ -13,11 +13,15 @@ static HWND l_SporeWindowHandle = nullptr;
 
 static BOOL CALLBACK enum_windows_proc_callback(HWND hWnd, LPARAM lParam)
 {
+	if (l_SporeWindowHandle != nullptr)
+	{
+		return TRUE;
+	}
+
 	DWORD processId;
 	HRESULT res = GetWindowThreadProcessId(hWnd, &processId);
 
-	if (l_SporeWindowHandle == nullptr &&
-		res != 0 &&
+	if (res != 0 &&
 		processId == lParam)
 	{
 		// only match windows with SPORE in the name
