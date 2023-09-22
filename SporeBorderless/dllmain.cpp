@@ -15,6 +15,13 @@ void Initialize()
 		MessageBoxA(nullptr, "couldn't retrieve app canvas!", "SporeBorderless", MB_OK | MB_ICONERROR);
 		return;
 	}
+	
+	// we shouldn't do anything when
+	// the canvas is fullscreen
+	if (appCanvas->IsFullscreen())
+	{
+		return;
+	}
 
 	HWND windowHandle      = appCanvas->GetWindow();
 	HMONITOR monitorHandle = appCanvas->GetMonitor();
